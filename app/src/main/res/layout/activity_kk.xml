@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_margin="20dp"
+    android:layout_height="match_parent"
+    tools:context=".Useractivity">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Choice Now"
+        android:textColor="#000"
+        android:layout_marginTop="20dp"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        >
+
+    </TextView>
+
+        <ImageButton
+            android:id="@+id/tool"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_gravity="right"
+            android:onClick="showmenu"
+            android:layout_marginLeft="220dp"
+            android:background="#fff"
+            android:src="@drawable/ic_more_vert_black_24dp"
+            tools:ignore="OnClick">
+
+        </ImageButton>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="13dp"
+        >
+        <Button
+            android:id="@+id/search"
+            android:paddingLeft="10dp"
+            android:drawablePadding="-150dp"
+            android:textSize="18dp"
+            android:layout_width="300dp"
+            style="@style/ThemeOverlay.MaterialComponents.Light"
+            android:layout_marginRight="10dp"
+            android:layout_height="match_parent"
+            android:background="@drawable/mm"
+            android:textColor="#919090"
+            android:drawableLeft="@drawable/ic_search_black_24dp"
+            android:text="Search"
+            >
+
+        </Button>
+        <ImageButton
+            android:layout_width="60dp"
+            android:layout_height="match_parent"
+            android:background="@drawable/kk3"
+            android:layout_marginRight="30dp"
+            style="@style/ThemeOverlay.MaterialComponents.Light"
+            android:src="@drawable/ic_format_list_bulleted_black_24dp"
+            >
+
+        </ImageButton>
+
+    </LinearLayout>
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#fff"
+        android:layout_marginTop="20dp">
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tabs"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:theme="@style/ThemeOverlay.MaterialComponents.Light">
+            <com.google.android.material.tabs.TabItem
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/TextAppearance.MaterialComponents.Overline"
+                android:background="#000"
+                android:text="Home">
+
+            </com.google.android.material.tabs.TabItem>
+            <com.google.android.material.tabs.TabItem
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Backup">
+
+            </com.google.android.material.tabs.TabItem>
+            <com.google.android.material.tabs.TabItem
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Shoes">
+
+            </com.google.android.material.tabs.TabItem>
+        </com.google.android.material.tabs.TabLayout>
+
+    </com.google.android.material.appbar.AppBarLayout>
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/view_pager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+
+</LinearLayout>
