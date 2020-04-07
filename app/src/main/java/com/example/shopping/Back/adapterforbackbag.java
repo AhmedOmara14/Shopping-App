@@ -12,16 +12,18 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.shopping.R;
-import com.example.shopping.showitems;
+import com.example.shopping.pojo.class_items;
+import com.example.shopping.ui.main.showitems;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class adapterforbackbag extends RecyclerView.Adapter<adapterforbackbag.myviewholder>{
-    ArrayList<backbag> list ;
+    List<class_items> list =new ArrayList<>();
     Context context;
 
-    public adapterforbackbag(ArrayList<backbag> list, Context context) {
+    public adapterforbackbag(List<class_items> list, Context context) {
         this.list = list;
         this.context = context;
     }
@@ -52,6 +54,11 @@ public class adapterforbackbag extends RecyclerView.Adapter<adapterforbackbag.my
                 context.startActivity(intent);
             }
         });
+    }
+
+    public void setList(ArrayList<class_items> list) {
+        this.list = list;
+        notifyDataSetChanged();
     }
 
     @Override

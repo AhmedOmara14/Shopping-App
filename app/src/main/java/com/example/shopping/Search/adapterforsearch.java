@@ -12,15 +12,16 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.shopping.R;
 import com.example.shopping.Recommended.adapterforrecommended;
+import com.example.shopping.pojo.class_items;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
 public class adapterforsearch extends RecyclerView.Adapter<adapterforsearch.myviewholder>{
-    ArrayList<search_item> list;
+    ArrayList<class_items> list;
     Context context;
 
-    public adapterforsearch(ArrayList<search_item> list, Context context) {
+    public adapterforsearch(ArrayList<class_items> list, Context context) {
         this.list = list;
         this.context = context;
     }

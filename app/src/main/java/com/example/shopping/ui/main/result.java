@@ -1,9 +1,11 @@
-package com.example.shopping;
+package com.example.shopping.ui.main;
 
 import android.os.Bundle;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.shopping.R;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;

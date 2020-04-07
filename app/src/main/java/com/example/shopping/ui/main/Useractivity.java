@@ -1,4 +1,4 @@
-package com.example.shopping;
+package com.example.shopping.ui.main;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -14,6 +14,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.ViewPager;
 
+import com.example.shopping.R;
 import com.google.android.material.tabs.TabLayout;
 import com.google.firebase.auth.FirebaseAuth;
 
@@ -25,7 +26,7 @@ public class Useractivity extends AppCompatActivity {
     ImageButton tool;
     private ViewPager myviewpager;
     private TabLayout mytabLayout;
-    private tabaccess tabaccess;
+    private com.example.shopping.ui.main.tabaccess tabaccess;
 
   //  String firebaseUser;
     FirebaseAuth auth;

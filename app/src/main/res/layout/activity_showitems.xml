@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="#74b9ff"
-    tools:context=".showitems">
+    tools:context=".ui.main.showitems">
     <ImageView
         android:id="@+id/back"
         android:layout_width="40dp"

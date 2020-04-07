@@ -1,4 +1,4 @@
-package com.example.shopping.ui.user;
+package com.example.shopping.ui.main.user;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -6,33 +6,31 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.LifecycleOwner;
+import androidx.lifecycle.Observer;
+import androidx.lifecycle.ViewModelProviders;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.shopping.Back.Repositriy;
 import com.example.shopping.Back.adapterforbackbag;
-import com.example.shopping.Back.backbag;
+import com.example.shopping.pojo.class_items;
 import com.example.shopping.R;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
+import java.util.List;
 
 
 public class backupFragment extends Fragment {
     RecyclerView recyclerView;
     View view;
-    DatabaseReference reference;
-    FirebaseAuth auth;
-    ArrayList<backbag> list;
+    ArrayList<class_items> list;
     adapterforbackbag  adapterforbackbag;
     public backupFragment() {
-
     }
-
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -40,35 +38,21 @@ public class backupFragment extends Fragment {
 
         view= inflater.inflate(R.layout.fragment_backup, container, false);
         inialization();
-        reference.child("items").addValueEventListener(new ValueEventListener() {
+        Repositriy repositriy= ViewModelProviders.of(this).get(Repositriy.class);
+        adapterforbackbag=new adapterforbackbag(list, getContext());
+        recyclerView.setAdapter(adapterforbackbag);
+        repositriy.getData().observe((LifecycleOwner) getContext(), new Observer<List<class_items>>() {
             @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-                for (DataSnapshot dataSnapshot1:dataSnapshot.getChildren()){
-                    String type=dataSnapshot1.child("item_type").getValue().toString();
-                    backbag i=dataSnapshot1.getValue(backbag.class);
-                    if (type.equals("Back Bag")){
-                        list.add(i);
-                    }
-                }
-                adapterforbackbag=new adapterforbackbag(list,getContext());
-                recyclerView.setAdapter(adapterforbackbag);
-
-            }
-
-            @Override
-            public void onCancelled(DatabaseError databaseError) {
-
+            public void onChanged(List<class_items> class_items) {
+                adapterforbackbag.setList((ArrayList<com.example.shopping.pojo.class_items>) class_items);
             }
         });
-
         return view;
     }
     public void inialization(){
       recyclerView=view.findViewById(R.id.recyclerofbackup);
       recyclerView.setLayoutManager(new LinearLayoutManager(this.getActivity()));
-      reference= FirebaseDatabase.getInstance().getReference();
-      auth=FirebaseAuth.getInstance();
-      list=new ArrayList<backbag>();
+      list=new ArrayList<class_items>();
     }
 
 }

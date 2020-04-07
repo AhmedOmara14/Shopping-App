@@ -1,4 +1,4 @@
-package com.example.shopping;
+package com.example.shopping.ui.main;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -6,9 +6,9 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
 
-import com.example.shopping.ui.user.HomeUserFragment;
-import com.example.shopping.ui.user.ShoesFragment;
-import com.example.shopping.ui.user.backupFragment;
+import com.example.shopping.ui.main.user.HomeUserFragment;
+import com.example.shopping.ui.main.user.ShoesFragment;
+import com.example.shopping.ui.main.user.backupFragment;
 
 public class tabaccess extends FragmentPagerAdapter {
     public tabaccess(FragmentManager fm) {

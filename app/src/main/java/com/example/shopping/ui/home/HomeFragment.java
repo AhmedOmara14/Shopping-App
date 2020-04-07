@@ -120,10 +120,6 @@ public class HomeFragment extends Fragment {
         return root;
     }
      public void additemstodatabase(){
-         final Uri downloadUrl ;
-         //  reference.child("items").child(auth.getCurrentUser().getUid()).push().child("images").setValue(downloadUrl[0] +"");
-
-
         item_name=itemname.getText().toString();
          item_Des=itemdes.getText().toString();
          item_rice=itemprice.getText().toString();

@@ -1,4 +1,4 @@
-package com.example.shopping;
+package com.example.shopping.ui.main;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -6,8 +6,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.SystemClock;
 
+import com.example.shopping.R;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
 
 public class MainActivity extends AppCompatActivity {
     FirebaseAuth auth;
@@ -21,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-            Intent intent=new Intent(MainActivity.this,login.class);
+            Intent intent=new Intent(MainActivity.this, login.class);
             startActivity(intent);
 
 

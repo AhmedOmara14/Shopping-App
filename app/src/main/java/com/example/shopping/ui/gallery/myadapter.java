@@ -75,15 +75,7 @@ String currentuserid;
                    }
                });
 
-
-
-
-
-
     }
-
-
-
 
     @Override
     public int getItemCount() {

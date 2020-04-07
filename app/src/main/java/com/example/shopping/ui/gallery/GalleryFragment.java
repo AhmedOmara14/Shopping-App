@@ -78,8 +78,4 @@ public class GalleryFragment extends Fragment {
     }
 
 
-
-
-
-
 }

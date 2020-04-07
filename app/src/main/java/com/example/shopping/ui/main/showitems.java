@@ -1,4 +1,4 @@
-package com.example.shopping;
+package com.example.shopping.ui.main;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -10,7 +10,7 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.shopping.ui.user.HomeUserFragment;
+import com.example.shopping.R;
 import com.squareup.picasso.Picasso;
 
 import butterknife.BindView;

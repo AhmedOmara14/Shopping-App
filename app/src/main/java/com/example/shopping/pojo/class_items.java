@@ -1,15 +1,17 @@
-package com.example.shopping.Popular19;
+package com.example.shopping.pojo;
 
-public class items_popular_Recomended {
-    private String images,item_Des,item_name,item_price;
-    String item_type;
+import java.util.ArrayList;
 
+public class class_items {
+    private String
+            images
+            ,item_Des,
+            item_name,
+            item_price,
+            item_type;
 
-
-    public items_popular_Recomended() {
-
+    public class_items() {
     }
-
     public String getImages() {
         return images;
     }

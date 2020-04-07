@@ -10,7 +10,6 @@
         android:layout_width="230dp"
         android:layout_height="wrap_content"
         app:cardCornerRadius="15dp"
-        android:layout_marginRight="20dp"
         android:background="@drawable/kk"
         tools:ignore="MissingConstraints">
 

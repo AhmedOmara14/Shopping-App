@@ -5,12 +5,10 @@ import androidx.appcompat.widget.SearchView;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.annotation.SuppressLint;
 import android.os.Bundle;
 
-import com.example.shopping.Back.backbag;
 import com.example.shopping.R;
-import com.example.shopping.Recommended.adapterforrecommended;
+import com.example.shopping.pojo.class_items;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -26,7 +24,7 @@ public class search extends AppCompatActivity {
     DatabaseReference reference;
     FirebaseAuth auth;
     adapterforsearch adapterforsearch;
-    ArrayList<search_item> list;
+    ArrayList<class_items> list;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,12 +36,12 @@ public class search extends AppCompatActivity {
         searchView=(SearchView) findViewById(R.id.search_view);
         reference= FirebaseDatabase.getInstance().getReference().child("items");
         auth=FirebaseAuth.getInstance();
-        list=new ArrayList<search_item>();
+        list=new ArrayList<>();
         reference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 for (DataSnapshot dataSnapshot1:dataSnapshot.getChildren()){
-                    search_item i=dataSnapshot1.getValue(search_item.class);
+                    class_items i=dataSnapshot1.getValue(class_items.class);
                     list.add(i);
 
                 }
@@ -72,10 +70,10 @@ public class search extends AppCompatActivity {
     }
 
     private void search_it(String v) {
-        ArrayList<search_item> list1=new ArrayList<>();
-        for (search_item search_item : list){
-            if (search_item.getItem_name().toLowerCase().contains(v.toLowerCase())){
-                list1.add(search_item);
+        ArrayList<class_items> list1=new ArrayList<>();
+        for (class_items class_items : list){
+            if (class_items.getItem_name().toLowerCase().contains(v.toLowerCase())){
+                list1.add(class_items);
             }
         }
         adapterforsearch=new adapterforsearch(list1,search.this);

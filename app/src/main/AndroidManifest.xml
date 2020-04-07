@@ -16,19 +16,19 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="false"
         android:theme="@style/AppTheme">
-        <activity android:name=".result"></activity>
+        <activity android:name=".ui.main.result"></activity>
         <activity android:name=".Search.search" />
-        <activity android:name=".showitems" />
-        <activity android:name=".Useractivity" />
+        <activity android:name=".ui.main.showitems" />
+        <activity android:name=".ui.main.Useractivity" />
 
-        <activity android:name=".Register" />
-        <activity android:name=".login" />
+        <activity android:name=".ui.main.Register" />
+        <activity android:name=".ui.main.login" />
         <activity
-            android:name=".Adminpage"
+            android:name=".ui.main.Adminpage"
             android:label="@string/title_activity_adminpage"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".MainActivity"
+            android:name=".ui.main.MainActivity"
             android:theme="@style/screen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

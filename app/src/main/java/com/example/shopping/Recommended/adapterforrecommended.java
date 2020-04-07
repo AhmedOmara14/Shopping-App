@@ -11,18 +11,25 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.shopping.Popular19.items_popular_Recomended;
 import com.example.shopping.R;
-import com.example.shopping.showitems;
+import com.example.shopping.pojo.class_items;
+import com.example.shopping.ui.main.showitems;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class adapterforrecommended extends RecyclerView.Adapter<adapterforrecommended.myviewholder> {
-    ArrayList<item_recommended> list;
+    List<class_items> list=new ArrayList<>();
     Context context;
 
-    public adapterforrecommended(ArrayList<item_recommended> list, Context context) {
+
+    public void setList(ArrayList<class_items> list) {
+        this.list = list;
+        notifyDataSetChanged();
+    }
+
+    public adapterforrecommended(List<class_items> list, Context context) {
         this.list = list;
         this.context = context;
     }

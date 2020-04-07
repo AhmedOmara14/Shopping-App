@@ -43,7 +43,13 @@ dependencies {
         implementation 'com.android.support:design:28.0.0-rc01'
         implementation 'com.android.support:appcompat-v7:29.0.1'
         implementation "com.android.support:support-compat:28.0.0"
-
+        def lifecycle_version = "2.2.0"
+        def arch_version = "2.1.0"
+        implementation 'com.android.support:recyclerview-v7:29.0.0'
+        // ViewModel
+        implementation "androidx.lifecycle:lifecycle-viewmodel:$lifecycle_version"
+        // LiveData
+        implementation "androidx.lifecycle:lifecycle-livedata:$lifecycle_version"
         implementation 'com.android.support:support-v4:28.0.0-rc01'
         implementation 'com.android.support.constraint:constraint-layout:1.1.2'
         implementation 'com.google.firebase:firebase-auth:11.8.0'
